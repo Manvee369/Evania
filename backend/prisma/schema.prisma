@@ -1,0 +1,62 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "sqlite"; url = env("DATABASE_URL") }
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String
+  createdAt DateTime @default(now())
+  profile   Profile?
+  questRuns QuestRun[]
+}
+
+model Profile {
+  id        String @id @default(cuid())
+  userId    String @unique
+  user      User   @relation(fields: [userId], references: [id])
+  avatar    String?
+  themeSeed String?
+  goals     String[]
+  riskBand  String?
+}
+
+model Quest {
+  id           String @id @default(cuid())
+  title        String
+  qtype        String
+  difficulty   Int
+  xp           Int
+  expectedMins Int
+}
+
+model QuestRun {
+  id          String   @id @default(cuid())
+  questId     String
+  userId      String
+  status      String
+  startedAt   DateTime @default(now())
+  completedAt DateTime?
+  quest       Quest    @relation(fields: [questId], references: [id])
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+model Routine {
+  id           String @id @default(cuid())
+  userId       String
+  title        String
+  steps        Json
+  schedule     String
+  reminderTime String?
+  user         User   @relation(fields: [userId], references: [id])
+  logs         RoutineLog[]
+}
+
+model RoutineLog {
+  id        String   @id @default(cuid())
+  userId    String
+  routineId String
+  date      DateTime
+  status    String
+  routine   Routine  @relation(fields: [routineId], references: [id])
+}

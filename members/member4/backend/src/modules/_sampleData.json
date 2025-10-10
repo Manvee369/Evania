@@ -1,0 +1,17 @@
+{
+  "baselineMood": 3,
+  "questRuns": [
+    { "completedAt": "2025-10-05T08:10:00.000Z" },
+    { "completedAt": "2025-10-06T10:30:00.000Z" },
+    { "completedAt": "2025-10-06T17:40:00.000Z" },
+    { "completedAt": "2025-10-08T07:15:00.000Z" }
+  ],
+  "routineLogs": [
+    { "date": "2025-10-03T09:00:00.000Z", "status": "missed" },
+    { "date": "2025-10-04T09:00:00.000Z", "status": "done" },
+    { "date": "2025-10-05T09:00:00.000Z", "status": "done" },
+    { "date": "2025-10-06T09:00:00.000Z", "status": "missed" },
+    { "date": "2025-10-07T09:00:00.000Z", "status": "done" },
+    { "date": "2025-10-08T09:00:00.000Z", "status": "done" }
+  ]
+}
