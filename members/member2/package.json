@@ -1,17 +1,21 @@
 {
-  "name": "evania-xp-streak-backend-sqlite",
+  "name": "evania-app",
   "version": "1.0.0",
-  "type": "module",
-  "main": "server.js",
+  "private": true,
+  "main": "App.js",
   "scripts": {
-    "dev": "node server.js",
-    "reset:db": "node tools/reset-db.js"
+    "start": "expo start -c"
   },
   "dependencies": {
-    "better-sqlite3": "^11.7.0",
-    "cors": "^2.8.5",
-    "dayjs": "^1.11.13",
-    "express": "^4.19.2",
-    "nanoid": "^5.0.7"
+    "@dotlottie/player-component": "^2.7.12",
+    "@dotlottie/react-player": "^1.6.19",
+    "@expo/metro-runtime": "~3.2.3",
+    "expo": "~51.0.29",
+    "lottie-react-native": "^6.7.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.5",
+    "react-native-web": "~0.19.10",
+    "zustand": "^4.5.2"
   }
 }
